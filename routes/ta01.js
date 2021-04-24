@@ -155,7 +155,7 @@ router.post("/stretch-3", (req, res, next) => {
     return req.on('end', () => {
         // A let is appropriate here because we'll be modifying it.
         let parsedBody = Buffer.concat(body).toString();
-        parsedBody = parsedBody.split('&'); // Seperate key-val pairs
+        parsedBody = parsedBody.split('&'); // Separate key-val pairs
         const values = []; // Array to store retrieved values.
         for (let key_val_pair of parsedBody) {
         console.log('KeyVal pair: ' + key_val_pair);
