@@ -65,7 +65,6 @@ const routeHandler = (req, res) => {
                 })
 
                 let textToWrite = namesLeft.toString().split(',').join('\n')
-                console.log(textToWrite)
 
                 fs.writeFile('./prove01-users.txt', textToWrite, err => {})
                 res.statusCode = 302
