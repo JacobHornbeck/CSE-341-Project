@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/',(req, res, next) => {
-    res.render('pages', { 
+    res.render('pages/ta02', { 
         title: 'Team Activity 02', 
         path: '/ta02', // For pug, EJS 
         activeTA02: true, // For HBS
