@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><%= pageTitle %></title>
+        <link rel="stylesheet" href="/css/index.css">
+    </head>
+    <body>
+        <h2>Write a Book Summary</h2>
+        <form action="/add-summary" method="post">
+            <div class="input-container">
+                <input type="text" name="bookName" id="bookName" autofocus required>
+                <label for="bookName">Book Name</label>
+            </div>
+            <div class="input-container">
+                <textarea name="bookSummary" id="bookSummary" required></textarea>
+                <label for="bookSummary">Book Summary</label>
+            </div>
+            <input type="submit" value="Save Book Summary">
+        </form>
+        <hr>
+        <h2>View Book Summaries</h2>
+        <% if (summaries.length > 0) { %>
+            <div class="book-grid">
+                <% summaries.forEach((summary) => { %>
+                    <section class="book-card">
+                        <img src="/images/book.png" alt="book image">
+                        <h3><%= summary.bookName %></h3>
+                        <p><%= summary.bookSummary %></p>
+                    </section>
+                <% }) %>
+            </div>
+        <% } else { %>
+            <h3>Sorry, no book summaries found!</h3>
+        <% } %>
+    </body>
+</html>
